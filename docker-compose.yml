@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # Servicio de MySQL
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3307:3306" # Puerto para conectar MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: root   # Contraseña del usuario root
+
+    restart: always # Reinicia automáticamente en caso de error
+
+
+    volumes:
+      - mysql_data:/var/lib/mysql # Volumen persistente para datos
+    networks:
+      - app-network
+
+  # Servicio de la aplicación Node.js
+  app:
+    build: .
+    container_name: node-app
+    ports:
+      - "3000:3000"               # Mapeo del puerto 4000
+    depends_on:
+      - mysql                     # La aplicación espera a MySQL
+          
+    restart: always # Reinicia automáticamente en caso de error
+
+    networks:
+      - app-network
+    volumes:
+      - .:/app                    # Código fuente montado
+    command: npm start            # Comando para iniciar la app
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
