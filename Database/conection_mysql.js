@@ -22,8 +22,8 @@ async function testConnection() {
   } catch (error) {
     console.error("Error al conectar a la base de datos:", error.message);
 
-    // Agregar un retraso de 5 segundos antes de intentar una acción adicional
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    // Agregar un retraso de 10 segundos antes de intentar una acción adicional
+    await new Promise(resolve => setTimeout(resolve, 10000));
     
     console.log("Reintentando conectar a la base de datos...");
     // Aquí podrías intentar llamar a `testConnection` nuevamente o manejar la lógica de reintento
