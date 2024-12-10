@@ -34,7 +34,6 @@ services:
       - app-network
     volumes:
       - .:/app                    # Código fuente montado
-    command: npm start            # Comando para iniciar la app
 
 networks:
   app-network:
