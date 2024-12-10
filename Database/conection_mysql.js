@@ -21,4 +21,5 @@ async function testConnection() {
 
 testConnection();
 
+// Para crear la base de datos con su tabla
 initializeDatabase();

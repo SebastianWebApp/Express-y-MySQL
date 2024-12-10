@@ -3,6 +3,7 @@ import { connectToDB } from "../Database/conection_mysql.js";
 // Crear base de datos
 const createDatabase = async () => {
     try {
+        // Creamos la tabla node_sql
         await connectToDB.query("CREATE DATABASE IF NOT EXISTS node_sql;");
         console.log("Base de datos 'node_sql' creada (si no existía).");
     } catch (error) {

@@ -10,6 +10,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root   # Contraseña del usuario root
 
+# Se coloca esta parte para que si ocurre un error se reinicie de forma automática
     restart: always # Reinicia automáticamente en caso de error
 
 
