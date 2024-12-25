@@ -23,6 +23,7 @@ services:
   app:
     build: .
     container_name: node-app
+    image: sebastianwebapp/express_mysql
     ports:
       - "3000:3000"               # Mapeo del puerto 4000
     depends_on:
