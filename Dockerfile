@@ -1,5 +1,5 @@
 FROM node:22-bullseye
-WORKDIR /app
+WORKDIR /
 
 COPY . .
 
