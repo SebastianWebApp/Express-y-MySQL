@@ -1,18 +1,19 @@
 import {connectToDB} from "../Database/conection_mysql.js";
 
-export const Leer_Base = async (req, res) =>{
-
+export const Leer_Base = async (req, res) => {
     try {
-
         // Colocamos la sentencia SQL para mandar a llamar lo que necesitamos
         const [rows] = await connectToDB.query("SELECT id, nombre FROM lenguaje;");
         console.table(rows);  // Muestra todos los registros
-        return rows;
+
+        // Enviar los datos al cliente como respuesta JSON
+        return res.status(200).json(rows);  // Respondemos con los datos en formato JSON
     } catch (error) {
         console.error("Error al obtener los datos:", error.message);
+        return res.status(500).json({ error: "Error al obtener los datos" });  // Respondemos con un error
     }
+};
 
-}
 
 export const Leer_Base_ID = async (req, res) =>{
 
