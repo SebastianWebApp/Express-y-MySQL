@@ -8,7 +8,7 @@ Este repositorio presenta un proyecto básico que demuestra cómo crear un CRUD 
 - Implementación en una instancia de **AWS**, facilitando la visualización y uso del microservicio en un entorno real.  
 
 #### Tecnologías utilizadas:
-- **Node.js** con **Express** para el desarrollo del backend.  
+- <img src = "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB">
 - **MySQL** como base de datos.  
 - **Docker** y **Docker Compose** para la contenedorización.  
 - **GitHub Actions** para la automatización CI/CD.  
